@@ -5,25 +5,16 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
   root: "./client",
-  plugins: [
-    react(),
-    runtimeErrorOverlay(),
-  ],
+  plugins: [react(), runtimeErrorOverlay()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
       "@shared": path.resolve(__dirname, "shared"),
-      "@assets": path.resolve(__dirname, "attached_assets"),
-    },
+      "@assets": path.resolve(__dirname, "attached_assets")
+    }
   },
   build: {
-    outDir: "dist",
-    emptyOutDir: true,
-  },
-  server: {
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
-  },
+    outDir: "../dist",
+    emptyOutDir: true
+  }
 });
