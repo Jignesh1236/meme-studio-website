@@ -1,3 +1,4 @@
+
 {
   "version": 2,
   "builds": [
@@ -8,8 +9,15 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "dist/index.js"
+    },
+    {
       "src": "/(.*)",
-      "dest": "index.js"
+      "dest": "dist/public/index.html"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
