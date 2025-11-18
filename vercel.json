@@ -2,14 +2,16 @@
   "version": 2,
   "builds": [
     {
-      "src": "client/package.json",
-      "use": "@vercel/next"
+      "src": "client/index.html",
+      "use": "@vercel/static-build"
     }
   ],
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/client/$1"
+      "dest": "/client/dist/$1"
     }
   ]
 }
